@@ -1,5 +1,15 @@
-@servers(['web' => ['192.168.1.1']])
 
-@task('foo', ['on' => 'web'])
-    ls -la
-@endtask
+			@servers(['web' => 'thebrace.net'])
+			
+				<?php
+				$repo = 'testing';
+				$release_dir = 'testing';
+				$app_dir = 'testing';
+				$release = 'release_'.date('YmdHis');		
+				?>
+				
+			@task('deploy')
+				cd /path/to/site
+				git pull origin master
+			@endtask
+		
